@@ -101,7 +101,7 @@ const barOptions = {
   responsive: true,
   maintainAspectRatio: false,
   layout: {
-    padding: { top: 0, bottom: 20 },
+    padding: { top: 0, bottom:window.innerWidth < 600 ? 90: 20 },
   },
   plugins: {
     legend: { display: false },

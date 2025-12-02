@@ -22,7 +22,7 @@ export default function Profile() {
             @{data?.login}
           </h3>
         </Link>
-        <div className="flex gap-3 pt-5">
+        <div className="flex flex-col items-center md:flex-row gap-3 pt-5">
                   <div className="flex gap-2 items-center ">
                       {data?.location &&
                           <>
