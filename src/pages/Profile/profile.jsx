@@ -3,22 +3,9 @@ import { useParams, Link } from "react-router-dom";
 import { CalendarIcon, Location } from "../../components/Icon";
 export default function Profile() {
   const { username } = useParams();
-  const { data, isFetching, error } = useSearchUsersQuery(username);
+  const { data } = useSearchUsersQuery(username);
   console.log("data", data);
-  if (isFetching) {
-    return (
-      <p className="text-white text-center">
-        Loading...This might take a few moments.
-      </p>
-    );
-  }
-  if (error) {
-    return (
-      <p className="text-white text-center">
-        Opps!!!There was an error trying to load results...Please try again.
-      </p>
-    );
-  }
+  
   return (
     <section className="bg-[#1a1e22] w-full ">
       <div className="flex flex-col items-center font-inter pt-14 ">
@@ -31,7 +18,7 @@ export default function Profile() {
           {data?.name}
         </h2>
         <Link to={`https://github.com/${username}`}>
-          <h3 className="text-lg md:text-3xl text-[#0070f3] pt-3">
+          <h3 className="text-lg font-mono md:text-3xl text-[#0070f3] pt-3">
             @{data?.login}
           </h3>
         </Link>

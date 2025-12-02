@@ -27,7 +27,7 @@ export default function Repo() {
     const options = ["star", "fork", "size"];
 
     return (
-        <div className="pt-[1300px] md:pt-[1440px] xl:pt-[480px] font-inter px-6 md:px-[86px]">
+        <div className="pt-[1300px] md:pt-[1440px] xl:pt-[480px] font-inter px-6 md:px-[110px]">
             
             <div className="flex items-center gap-4">
                 <h2 className="text-lg md:text-3xl text-[#24292e] flex items-end gap-4">
@@ -74,7 +74,7 @@ export default function Repo() {
                             <div className="bg-white rounded-md p-8 min-h-[225px] shadow-md">
                                 <div className="flex gap-2 items-center">
                                     <RepoIcon />
-                                    <h2 className="font-medium text-xl text-[#24292E]">{repo.name}</h2>
+                                    <h2 className="font-semibold font-mono text-xl text-[#24292E]">{repo.name}</h2>
                                 </div>
 
                                 <h3 className="text-sm pt-4 text-[#6a737d]">{repo.description}</h3>

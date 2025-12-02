@@ -113,16 +113,17 @@ const barOptions = {
   },
   scales: {
     x: {
-      ticks: {
+          ticks: {
+           autoSkip: true,
         minRotation: 60,
         maxRotation: 60,
-        font: { family: "Inter, sans-serif", size: 12, weight: "400" },
+        font: { family: "Inter, sans-serif", size: window.innerWidth < 600 ? 10 : 12, weight: "400" },
       },
       grid: { display: true },
     },
     y: {
       beginAtZero: true,
-      ticks: { font: { family: "Inter, sans-serif", size: 12, weight: "400" } },
+      ticks: { font: { family: "Inter, sans-serif", size: window.innerWidth < 600 ? 9 : 12, weight: "400" } },
       grid: { color: "rgba(0,0,0,0.1)" },
     },
   },
@@ -160,22 +161,22 @@ const doughnutOptions = {
 
     return (
        
-        <div className="flex flex-col xl:flex-row justify-items-center gap-10 font-inter">
+        <div className="flex flex-col  xl:flex-row justify-center gap-10 font-inter">
             <div className="border border-white shadow-sm bg-white  p-4 md:p-10 rounded-sm">
-                <div className="w-[300px] md:w-[330px]">
+                <div className="w-[300px] md:w-[312px]">
                     <h2 className="text-3xl  text-[#24292e] font-medium underline decoration-dashed decoration-2 decoration-[#dbdbdb] underline-offset-12 pb-8">Top Languages</h2>
       <Pie data={pieData} options={pieOptions}/>
                 </div> 
             </div>
             <div className="border border-white bg-white shadow-sm p-4 md:p-10 rounded-sm">
-                <div className="w-[300px] md:w-[330px] h-[360px] md:h-[330px]">
+                <div className="w-[300px] md:w-[312px] h-[360px] md:h-[312px]">
                     <h2 className="text-3xl  text-[#24292e] font-medium underline decoration-dashed decoration-2 decoration-[#dbdbdb] underline-offset-12 pb-8">Most Starred</h2>
                 <Bar data={ barData} options={barOptions} />
                 </div>  
             </div>
             
             <div className="border border-white bg-white shadow-sm  p-4 md:p-10 rounded-sm">
-                <div className="w-[300px] md:w-[330px]">
+                <div className="w-[300px] md:w-[312px] min-h-[380px]">
                     <h2 className="text-3xl text-[#24292e] font-medium underline decoration-dashed decoration-2 decoration-[#dbdbdb] underline-offset-12 pb-10">Stars Per Language</h2>
                     {pieValues?.length > 0 ? (
            <Doughnut data={doughnutData} options={doughnutOptions}/>
