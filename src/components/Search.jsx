@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Octokit } from "@octokit/rest";
 import { useNavigate } from "react-router-dom";
 import { Logo } from "./Icon";
-import { useSearchUsersQuery } from "../redux/services/octokit";
 export default function Search() {
   const navigate = useNavigate();
     const [input, setInput] = useState("");
@@ -37,6 +36,7 @@ export default function Search() {
       }
     }
   };
+ 
   return (
     <div className="bg-[#1a1e22] w-full h-screen">
       <div className="flex flex-col gap-10 items-center pt-36 font-inter px-6 md:px-0">
